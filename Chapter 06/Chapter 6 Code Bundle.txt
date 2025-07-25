@@ -1,0 +1,24 @@
+Page 5:
+
+C:\> sfc /VERIFONLY
+
+_______________________________
+
+C:\> sigverif
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Page 29:
+
+sudo apt-get install auditd audispd-plugins
+
+_______________________________
+
+sudo dnf install audit
+
+_______________________________
+
+$/etc/audit/rules.d/audit.rules
+
+_______________________________
+

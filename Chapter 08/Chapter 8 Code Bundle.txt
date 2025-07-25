@@ -1,0 +1,11 @@
+Page 19:
+
+sudo inetsim
+
+cd (Route of the log)
+	 
+tail -f –(name of the log)
+
+
+
+

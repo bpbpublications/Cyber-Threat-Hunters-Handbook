@@ -1,0 +1,159 @@
+Page 20:
+
+$ pip install attackcti
+
+_______________________________
+
+git clone https://github.com/OTRF/ATTACK-Python-Client
+cd ATTACK-Python-Client
+pip install .
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Page 28:
+
+$ echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_24.04/Release.key | \ gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
+
+$sudo apt update
+
+$sudo apt install zeek
+
+_________________________________
+
+
+echo "export PATH=$PATH:/opt/zeek/bin" >> ~/.bashrc
+
+source ~/.bashrc
+
+
+__________________________________
+
+$sudo add-apt-repository ppa:oisf/suricata-stable
+$sudo apt update
+$sudo apt install suricata
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Page 29:
+
+$sudo apt update && sudo apt upgrade -y
+
+__________________________________
+
+
+$wget https://github.com/Velocidex/velociraptor/releases/download/v0.73/velociraptor-v0.73.4-linux-amd64
+
+__________________________________
+
+$chmod +x velociraptor-v0.73.4-linux-amd64
+
+__________________________________
+
+$sudo mv velociraptor-v0.73.4-linux-amd64 /usr/local/bin/velociraptor
+
+__________________________________
+
+
+$sudo velociraptor config generate -i
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Page 30:
+
+$sudo velociraptor --config server.config.yaml frontend -v
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Page 31:
+
+sudo apt update && sudo apt upgrade -y
+
+__________________________________
+
+sudo apt install build-essential gcc make unzip sendmail inotify-tools expect libevent-dev libpcre2-dev libz-dev libssl-dev libsystemd-dev -y
+
+__________________________________
+
+wget https://github.com/ossec/ossec-hids/archive/refs/tags/3.8.0.tar.gz
+
+__________________________________
+
+tar -xvzf 3.8.0.tar.gz
+
+__________________________________
+
+cd ossec-hids-3.8.0
+
+__________________________________
+
+sudo ./install.sh
+
+__________________________________
+
+sudo systemctl start ossec
+
+__________________________________
+
+sudo systemctl enable ossec
+
+__________________________________
+
+sudo /var/ossec/bin/ossec-control status
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Page: 32:
+
+$sudo apt update
+$sudo apt install docker.io docker-compose -y
+$sudo systemctl start docker
+$sudo systemctl enable docker
+
+__________________________________
+
+$sudo docker pull opensearchproject/opensearch:2
+
+__________________________________
+
+$sudo docker pull opensearchproject/opensearch-dashboards:2
+
+__________________________________
+
+$sudo docker run -d -p 9200:9200 -p 9600:9600 -e "discovery.type=single-node" -e "OPENSEARCH_INITIAL_ADMIN_PASSWORD=<custom-admin-password>" opensearchproject/opensearch:latest
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Page 33:
+
+curl https://localhost:9200 -ku admin:<custom-admin-password>
+
+__________________________________
+
+git clone https://github.com/MISP/misp-docker
+
+__________________________________
+
+cd misp-docker
+
+__________________________________
+
+cp template.env .env 
+
+__________________________________
+
+https://github.com/MISP/misp-docker/blob/master/template.env
+
+__________________________________
+
+$sudo docker-compose up -d
+
+
+
+
+
+
